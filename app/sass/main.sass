@@ -1,0 +1,583 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "magnific-animate"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+ul, li
+	list-style-type: none
+	padding: 0
+	margin: 0
+
+a:hover
+	text-decoration: none
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	text-transform: uppercase
+
+.container
+	max-width: 1250px
+.row
+	text-align: center
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	background-color: #1a1a1a    //для перезагрузки темный фон
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 30px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+b, strong
+	font-weight: bold
+
+
+
+
+//HEADER
+header, section
+	position: relative
+	background-size: cover
+	background-position: center
+
+
+.site-header
+	//min-height: 700px
+	height: 100vh
+	.top-line
+		padding-top: 40px
+		position: absolute
+		width: 100%
+		z-index: 1
+		.phone
+			position: absolute
+			right: 100px
+			top: 44px
+			white-space: nowrap //не переносит на другую строку
+			color: $accent
+			.fa
+				margin-right: 3px
+		.logo
+			img
+				width: 125px
+				height: auto
+				margin-left: 3%
+
+
+	//OwlCarousel2-2.3.4
+	.owl-carousel 
+		z-index: 1
+		position: absolute
+		.text
+			position: absolute
+			text-align: right
+			top: 250px
+			right: 200px
+			.h1
+				font-size: 24px
+				position: relative
+				white-space: nowrap
+				left: -700px
+				opacity: 0
+				transition: all 1.8s ease
+			span
+				font-style: italic
+				color: #808080
+				position: relative
+				opacity: 0
+				transition: all 5s ease
+		.item
+			.foto
+				height: 100vh
+				background-size: cover
+				background-position: center
+				background-repeat: no-repeat
+				width: 100%
+		.owl-item
+			&.active
+				.h1
+					opacity: 1
+					left: 0
+				span
+					font-style: italic
+					opacity: 1
+
+		.owl-nav button.owl-next
+			position: absolute
+			top: 50%
+			right: 4%
+			color: $accent
+			font-size: 40px
+			&:hover
+				background: none
+				color: lighten($accent, 5%)
+		button:focus
+			outline: none         //убрать рамку
+
+		.owl-nav button.owl-prev
+			position: absolute
+			top: 50%
+			left: 4%
+			color: $accent
+			font-size: 40px
+			&:hover
+				background: none
+				color: lighten($accent, 5%)
+
+	.owl-theme .owl-dots
+		position: absolute
+		bottom: 4%
+		left: 0px
+		right: 0px
+		width: 100%
+		text-align: center
+
+
+
+//hamburger	
+.hamburger
+	position: absolute
+	right: 10px
+	top: 30px
+	border: none
+	.hamburger-inner::after, .hamburger-inner, .hamburger-inner::before
+		background-color: #fff
+	&:focus
+		outline: none
+
+.mm-menu a, .mm-menu a:active, .mm-menu a:hover, .mm-menu a:link, .mm-menu a:visited
+	outline: none
+
+
+//картинка в mmenu
+.mm-navbar
+	border: none
+.mm-navbar__title
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	width: 100%
+	text-align: center
+
+.mm-navbar__title img
+	opacity: 0.3
+	width: 250px
+	height: auto
+
+
+
+
+
+
+//mmenu
+.mm-listitem__btn:not(.mm-listitem__text)
+	border: none
+.mm-listitem a, .mm-listitem a:hover
+	color: $accent
+.mm-listitem_selected > .mm-listitem__text
+	background: none
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::after, .hamburger.is-active .hamburger-inner::before
+	background-color: #fff
+
+
+//УСЛУГИ
+.section-services                  //фон
+	padding-bottom: 3%
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	&::before                //затемнение фона
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #111
+		opacity: 0.9
+	.h2
+		position: relative
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		padding-top: 3%
+		padding-bottom: 3%
+		font-size: 30px
+		span
+			margin: 0 20px
+		&::before,&::after
+			content: ''
+			position: relative
+			width: 100%
+			height: 1px
+			background-color: $accent
+			display: inline-block
+
+
+	//картинки услуг
+	.servic-col
+		position: relative
+		.boxImg
+			position: relative
+			width: 100%
+			height: auto
+			top: 0
+			left: 0
+			overflow: hidden
+			margin-bottom: 20px
+			&:hover
+				.block::before
+					transform: translateX(30%) rotate(45deg) scale(2)
+					transition: 2s
+					opacity: .6
+				.block::after
+					transform: translateX(-40%) rotate(45deg) scale(2)
+					transition: 2s
+					opacity: .6
+				img
+					transform: rotate(-30deg) scale(2)
+					filter: blur(2px)
+			img
+				width: 100%
+				height: auto
+				background-size: cover
+				background-position: center
+				background-repeat: no-repeat
+				transition: 1.7s
+			.h3
+				color: #fff
+				text-transform: none
+				background-color: $accent
+				width: 100%
+				//height: 50px
+				padding-top: 3%
+				padding-bottom: 3%
+			.block
+				position: absolute
+				width: 100%
+				height: auto
+				top: 0
+				left: 0
+				right: 0
+				text-align: center
+				&::before, &::after
+					content: ''
+					width: 300px
+					height: 300px
+					position: absolute
+					top: 0
+					left: 0
+					background: $accent
+					opacity: .1
+					transition: 2s
+				&::before
+					transform: translateX(-125%) rotate(45deg)
+				&::after
+					transform: translateX(230%) rotate(45deg)
+				.text
+					height: 100px
+					position: relative
+					top: 3%
+					color: #ffffff
+					text-align: center
+					z-index: 10
+					h3
+						line-height: 1.2
+						margin-bottom: 10px
+						font-size: 18px
+						transform: scale(0)
+						transition: 1.7s
+					p
+						line-height: 1.1
+						height: 100%
+						font-size: 14px
+						margin: 5px 10px
+						text-align: center
+						transform: scale(4)
+						transition: 1.7s
+						opacity: 0
+					.div
+						position: relative
+						left: 0
+						right: 0
+						width: 100%
+						text-align: center
+						a
+							position: absolute
+							left: 22%
+							text-decoration: none
+							text-transform: uppercase
+							border: 2px solid #fff
+							padding: 10px 30px
+							border-radius: 8px
+							opacity: 0
+							transition: 1.7s ease-in-out
+							overflow: hidden
+							color: #fff
+							&::before 
+								content: ''
+								position: absolute
+								top: -4px
+								left: -75px
+								height: 50px
+								width: 50px
+								background: linear-gradient(90deg, rgba(255,255,255,.1), rgba(255,255,255,.5))
+								transform: skewX(-45deg)
+							&:hover
+								&::before 
+									left: 200px
+									transition: .5s ease-in-out
+		.boxImg:hover .text h3
+			transform: scale(1)
+		.boxImg:hover .text p
+			transform: scale(1)
+			opacity: 1
+		.boxImg:hover a
+			opacity: 1 !important
+			transition: 3s !important
+
+
+//КОНТАКТЫ
+.section-contacts
+	position: relative
+	.contacts
+		background-color: darken(#fff, 15%)
+		color: #111
+		padding-bottom: 3%
+		.h2
+			display: flex
+			align-items: center
+			white-space: nowrap
+			margin: 0
+			padding-top: 3%
+			padding-bottom: 3%
+			font-size: 30px
+			span
+				margin: 0 20px
+			&::before,&::after
+				content: ''
+				position: relative
+				width: 100%
+				height: 1px
+				background-color: $accent
+				display: inline-block
+		.mapcont
+			.map
+				height: 350px
+			.infa
+				vertical-align: middle
+				text-align: center
+				a
+					color: $accent
+					&:hover
+						color: lighten($accent, 30%)
+						transition: all .3s ease
+				img
+					width: 120px
+					height: auto
+					padding-bottom: 15px
+				.fa
+					padding-right: 10px
+				span
+					font-size: 14px
+
+
+//ФУТЕР
+#my-footer
+	padding-top: 1%
+	.section-footer
+		padding-bottom: 1%
+		.logo
+		a
+			color: $accent
+			&:hover
+				color: lighten($accent, 30%)
+				transition: all .3s ease
+		h4
+			color: $accent
+			padding-bottom: 15px
+		.fa
+			padding-right: 10px
+		.work
+			p
+				margin: 0
+		span
+			font-size: 14px
+		img
+			width: 120px
+			height: auto
+			padding-bottom: 15px
+
+
+
+//Magnific-popup
+.callback 
+	background: none
+	padding: 20px 30px
+	text-align: center
+	max-width: 300px
+	margin: 40px auto
+	position: relative
+	color: red
+
+//ЗАКАЗ. ЗВОНОК  INPUT
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	z-index: 10
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+
+input, optgroup, select, textarea
+	margin-bottom: 10px
+	border-radius: 10px
+
+//СТРАНИЦА РЕГИСТР. ИП
+article
+.art
+	padding-bottom: 3%
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	&::before                //затемнение фона
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #111
+		opacity: 0.9
+	.text_obr
+		span
+			color: $accent
+			font-size: 26px
+			font-weight: 600
+	.h2
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		padding-top: 3%
+		padding-bottom: 3%
+		font-size: 30px
+		span
+			margin: 0 20px
+		&::before,&::after
+			content: ''
+			position: relative
+			width: 100%
+			height: 1px
+			background-color: $accent
+			display: inline-block
+	.h2
+		padding-top: 5%
+		position: relative
+		text-align: center
+		z-index: 2
+		color: $accent
+	.regip
+		.links
+			ul
+				text-align: left
+				a
+					text-decoration: underline
+					color: $accent
+					transition: all .5s ease
+					&:hover,
+					&.active
+						text-decoration: none
+						color: lighten($accent, 30%)
+				.fa
+					padding-right: 10px
+			img
+				width: 120px
+				height: auto
+				padding-bottom: 15%
+		p
+			position: relative
+			z-index: 2
+			margin: 3%
+		.regimg
+			img
+				position: relative
+				padding-top: 20%
+				padding-bottom: 20%
+				width: 100%
+				height: auto
+				z-index: 2
+
+
+
+
+
+
+
+@import "media" // Always at the end
