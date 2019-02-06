@@ -12,6 +12,7 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
+		imagemin      = require('gulp-imagemin'),
 		rsync         = require('gulp-rsync');
 
 gulp.task('browser-sync', function() {
@@ -43,7 +44,6 @@ gulp.task('scripts', function() {
 		'app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'app/libs/equalheights/equalheights.js',
-		//'app/libs/superfish/dist/js/superfish.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
@@ -55,6 +55,12 @@ gulp.task('scripts', function() {
 gulp.task('code', function() {
 	return gulp.src('app/*.html')
 	.pipe(browserSync.reload({ stream: true }))
+});
+
+gulp.task('imagemin', function() {
+	return gulp.src('app/img/**/*')
+	.pipe(cache(imagemin()))
+	.pipe(gulp.dest('app/minimg'))
 });
 
 gulp.task('rsync', function() {
