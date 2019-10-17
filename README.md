@@ -4,9 +4,7 @@
   менеджера пакетов - <b>npm</b>, входящий в состав <b>Node.js</b>.<br>
   менеджера пакетов для web - <b>bower</b>,<br>
   препроцессора - <b>Sass</b>,<br>
-  библиотеки - <b>jQuery</b>,<br>
+  библиотеки - <b>jQuery</b><br>
   
 
-<b></b>
-,<br>
 https://zemi4.github.io/
