@@ -1,3 +1,11 @@
 # zemi4.github.io
-my site
+Сайт написан с помощью:<BR>
+  сборщика <b>Gulp</b>,<br>
+  менеджера пакетов - <b>npm</b>, входящий в состав <b>Node.js</b>.<br>
+  менеджера пакетов для web - <b>bower</b>,<br>
+  препроцессора - <b>Sass</b>,<br>
+  
+
+<b></b>
+,<br>
 https://zemi4.github.io/
