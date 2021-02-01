@@ -23,6 +23,7 @@
     "gulp-util": "^3.0.8"
   },
   "dependencies": {
+    "gulp-cli": "^2.3.0",
     "hamburgers": "^1.1.3"
   }
 }
